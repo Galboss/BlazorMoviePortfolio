@@ -49,7 +49,20 @@
                 }
             </a>
         }
-
+        <NavLink class="nav-item" href="/Movies">
+            <Icons Icon="film"/>
+            @if (menuExtended)
+            {
+                <span>&nbsp;Movies</span>
+            }
+        </NavLink>
+        <NavLink class="nav-item" href="/About">
+            <Icons Icon="info" />
+            @if (menuExtended)
+            {
+                <span>&nbsp;About</span>
+            }
+        </NavLink>
     </div>
     
 </aside>
