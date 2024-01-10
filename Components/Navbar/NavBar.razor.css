@@ -1,0 +1,78 @@
+﻿.navaside {
+    width:90px;
+    min-height: 100dvh;
+    -webkit-box-shadow: 10px 0px 6px 0px rgba(0,0,0,0.15);
+    -moz-box-shadow: 10px 0px 6px 0px rgba(0,0,0,0.15);
+    box-shadow: 10px 0px 6px 0px rgba(0,0,0,0.15);
+    overflow: hidden;
+    transition: 0.4s all ease-out;
+    z-index:99;
+}
+
+.navaside-extended {
+    width:150px;
+    height: 100dvh;
+    -webkit-box-shadow: 10px 0px 6px 0px rgba(0,0,0,0.15);
+    -moz-box-shadow: 10px 0px 6px 0px rgba(0,0,0,0.15);
+    box-shadow: 10px 0px 6px 0px rgba(0,0,0,0.15);
+    overflow: hidden;
+    transition: 0.4s all ease-out;
+}
+
+.navSection{
+    display:flex;
+    flex-direction:column;
+    font-size:1.4em;
+}
+
+::deep .nav-item {
+    font-family:'Kanit';
+    font-weight:600;
+    display: inherit;
+    flex-direction: column;
+    text-decoration: none;
+    align-items: center;
+    color: var(--primary-color);
+    padding: 20px 0;
+    transition: 0.4s all ease-out;
+    border-top: 1px #777777 solid;
+    border-radius:15px 15px 0 0;
+}
+
+::deep .nav-item:hover {
+    background: var(--primary-background-gradient);
+    color: #fff;
+    transition: 0.4s all ease-out;
+}
+
+.aside-title{
+    font-family:"Teko";
+    font-weight:bolder;
+    letter-spacing:5px;
+    line-height:0.85;
+    font-size:2em;
+    display:flex;
+    flex-direction:column;
+    margin: 20px auto 20px auto;
+    width:min-content;
+}
+
+.aside-title .capital{
+    color: var(--primary-color);
+}
+
+.aside-title .letters{
+    overflow:hidden;
+    width:90px;
+    transition: 0.4s all ease-out;
+}
+.aside-title .word{
+    display:inherit;
+    flex-direction:row;
+    width:min-content;
+}
+.aside-title .letters-hidden {
+    overflow: hidden;
+    width: 0px;
+    transition: 0.4s all ease-out;
+}

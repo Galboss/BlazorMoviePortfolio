@@ -1,0 +1,91 @@
+﻿@inject ISessionStorageService SessionStorage
+@inject ILocalStorageService LocalStorage
+<style>
+    .page{
+        background-color: @(theme?"#333333":"#fff");
+        color: @(theme?"#fff":"#000");
+    }
+    .main-content{
+        width: calc(100dvw - @(menuExtended? "150px":"90px"));
+    }
+</style>
+
+<aside class="@(!menuExtended?"navaside":"navaside-extended")">
+    <div class="aside-title">
+        <div class="word">
+            <span class="capital">B</span><span class="@(menuExtended?"letters":"letters-hidden")">lazor</span>
+        </div>
+        <div class="word">
+            <span class="capital">M</span><span class="@(menuExtended?"letters":"letters-hidden")">ovie</span>
+        </div>
+        <div class="word">
+            <span class="capital">P</span><span class="@(menuExtended?"letters":"letters-hidden")">orfolio</span>
+        </div>
+    </div>
+    <div class="navSection">
+        <a class="nav-item" role="button" @onclick="ChangeMenu">
+            <Icons Icon="bars" />
+            @if(menuExtended){
+                <span>&nbsp;Extended</span>
+            }
+        </a>
+        @if (theme)
+        {
+            <a class="nav-item" role="button" @onclick="ChangeTheme">
+                <Icons Icon="sun" />
+                @if (menuExtended)
+                {
+                    <span>&nbsp;Light theme</span>
+                }
+            </a>
+        }
+        else
+        {
+            <a class="nav-item" role="button" @onclick="ChangeTheme">
+                <Icons Icon="moon" />
+                @if (menuExtended)
+                {
+                    <span>&nbsp;Dark theme</span>
+                }
+            </a>
+        }
+
+    </div>
+    
+</aside>
+
+@code{
+    private bool menuExtended { get; set; } = false;
+    private bool theme { get; set; } = false;
+    private async Task GetMenuExtended(){
+        bool session = await SessionStorage.GetItemAsync<bool>("menu");
+        if(session){
+            menuExtended = true;
+            await SessionStorage.SetItemAsync("menu",menuExtended);
+        }
+    }
+    private async Task GetTheme()
+    {
+        bool storage = await LocalStorage.GetItemAsync<bool>("theme");
+        if (storage)
+        {
+            theme = storage;
+            await LocalStorage.SetItemAsync("theme", theme);
+        }
+    }
+    private async Task ChangeMenu()
+    {
+        menuExtended = !menuExtended;
+        await SessionStorage.SetItemAsync("menu", menuExtended);
+    }
+    private async Task ChangeTheme()
+    {
+        theme = !theme;
+        await LocalStorage.SetItemAsync("theme", theme);
+    }
+
+    protected override async Task OnParametersSetAsync(){
+        await GetMenuExtended();
+        await GetTheme();
+    }
+}

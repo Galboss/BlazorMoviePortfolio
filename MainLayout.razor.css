@@ -1,0 +1,19 @@
+﻿.page{
+    display:flex;
+    flex-direction:row;
+    min-height:100dvh;
+    min-width:100dvw;
+    transition:0.4s all ease-out;
+}
+
+.main-content{
+    min-height: calc(100dvh - 100px);
+    transition: 0.4s all ease-out;
+}
+.content{
+    min-height:100dvh;
+}
+
+::deep hr{
+    margin-bottom:0px;
+}
