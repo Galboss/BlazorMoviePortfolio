@@ -9,6 +9,7 @@
 .main-content{
     min-height: calc(100dvh - 100px);
     transition: 0.4s all ease-out;
+    padding-top: 50px;
 }
 .content{
     min-height:100dvh;
@@ -16,4 +17,14 @@
 
 ::deep hr{
     margin-bottom:0px;
+}
+
+::deep .form-control:focus{
+    box-shadow: none;
+    background-color: rgba(0,0,0,0);
+    border-color: var(--primary-color) !important;
+}
+::deep .form-control{
+    background-color: rgba(0,0,0,0);
+    transition: 0.4s all ease-out;
 }

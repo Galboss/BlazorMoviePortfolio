@@ -840,3 +840,11 @@ C:\Users\bryan\OneDrive\Escritorio\Blazor demo\BlazorMoviePortfolio\BlazorMovieP
 C:\Users\bryan\OneDrive\Escritorio\Blazor demo\BlazorMoviePortfolio\BlazorMoviePortfolio\obj\Debug\net7.0\refint\Portfolio2.dll
 C:\Users\bryan\OneDrive\Escritorio\Blazor demo\BlazorMoviePortfolio\BlazorMoviePortfolio\obj\Debug\net7.0\Portfolio2.pdb
 C:\Users\bryan\OneDrive\Escritorio\Blazor demo\BlazorMoviePortfolio\BlazorMoviePortfolio\obj\Debug\net7.0\ref\Portfolio2.dll
+C:\Users\bryan\OneDrive\Escritorio\Blazor demo\BlazorMoviePortfolio\BlazorMoviePortfolio\obj\Debug\net7.0\scopedcss\Components\Misc\PageTitleBar.razor.rz.scp.css
+C:\Users\bryan\OneDrive\Escritorio\Blazor demo\BlazorMoviePortfolio\BlazorMoviePortfolio\bin\Debug\net7.0\wwwroot\_framework\Newtonsoft.Json.dll
+C:\Users\bryan\OneDrive\Escritorio\Blazor demo\BlazorMoviePortfolio\BlazorMoviePortfolio\bin\Debug\net7.0\wwwroot\_framework\Newtonsoft.Json.dll.gz
+C:\Users\bryan\OneDrive\Escritorio\Blazor demo\BlazorMoviePortfolio\BlazorMoviePortfolio\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\bryan\OneDrive\Escritorio\Blazor demo\BlazorMoviePortfolio\BlazorMoviePortfolio\obj\Debug\net7.0\compressed\ild38pdo4h.gz
+C:\Users\bryan\OneDrive\Escritorio\Blazor demo\BlazorMoviePortfolio\BlazorMoviePortfolio\obj\Debug\net7.0\scopedcss\Components\Misc\Divider.razor.rz.scp.css
+C:\Users\bryan\OneDrive\Escritorio\Blazor demo\BlazorMoviePortfolio\BlazorMoviePortfolio\obj\Debug\net7.0\scopedcss\Pages\Movies\Movies.razor.rz.scp.css
+C:\Users\bryan\OneDrive\Escritorio\Blazor demo\BlazorMoviePortfolio\BlazorMoviePortfolio\obj\Debug\net7.0\scopedcss\Pages\Movies\MovieResult.razor.rz.scp.css

@@ -1,0 +1,21 @@
+﻿@if (movie.Keys.Count > 0)
+{
+    <div class="movie-result">
+        <div class="image-container">
+            <img src="@movie["Poster"]" alt="movie-image" />
+        </div>
+        <div class="movie-info">
+            <h1>@(movie["Title"])</h1>
+            <h5>Release date:&nbsp;@(movie["Released"])</h5>
+            <h5>Duration:&nbsp;@(movie["Runtime"])</h5>
+            <h5>Director/s:&nbsp;@(movie["Director"])</h5>
+            <h5>Writer/s:&nbsp;@(movie["Writer"])</h5>
+            <h5>Awards:&nbsp;@(movie["Awards"])</h5>
+            <h5>Metascore:@(movie["Metascore"])</h5>
+            <p>Plot:&nbsp;@(movie["Plot"])</p>
+        </div>
+    </div>
+}
+@code {
+    [Parameter] public Dictionary<string, object> movie { get; set; } = new Dictionary<string, object>();
+}

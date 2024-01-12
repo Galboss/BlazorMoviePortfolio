@@ -1,0 +1,20 @@
+﻿<PageTitle>@pageTitle</PageTitle>
+
+<style>
+    .title-bar{
+            background: linear-gradient(121deg, rgba(56, 185, 193, 1) 35%, rgba(255, 255, 255, 0.5) 100%), url(@(image));
+    }
+</style>
+
+<div class="title-bar">
+    <span>@pageTitle</span>
+    <div class="sub-background">
+        
+    </div>
+</div>
+
+@code {
+    [Parameter] public string pageTitle { get; set; } = string.Empty;
+    [Parameter] public string title { get; set; } = string.Empty;
+    [Parameter] public string image { get; set; } = string.Empty;
+}

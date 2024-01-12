@@ -1,0 +1,23 @@
+﻿.divider{
+    display:grid;
+    grid-template-columns: 0.4fr 0.2fr 0.4fr;
+    margin:15px 0px;
+    justify-items: center;
+    align-items: center;
+    gap: 15px;
+}
+.divider-line {
+    max-height: 5px;
+    min-height: 5px;
+    width: 100%;
+    background: linear-gradient(121deg, #AAAAAAFF 45%, rgba(0,0,0,0) 85% );
+    border: 1px solid #ccc;
+    border-radius: 15px;
+}
+
+.divider span{
+    font-size:1.6em;
+    font-family:'Kanit';
+    font-weight:normal;
+    font-style: italic;
+}

@@ -1,0 +1,47 @@
+﻿.title-bar {
+    position: relative;
+    margin-bottom: 50px;
+    width: 100%;
+    /*background: linear-gradient(121deg, rgba(56, 185, 193, 1) 35%, rgba(255, 255, 255, 1) 35%),*/ /* ajustado el 35% al final del gradiente */
+    /*url('/images/movie.jpg');*/
+    background-size: cover;
+    border-radius: 15px;
+    -webkit-box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.11);
+    -moz-box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.11);
+    box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.11);
+    font-family: 'Kanit';
+
+}
+.sub-background {
+    background: rgb(255,255,255);
+    background: linear-gradient(121deg, rgba(255,255,255,1) 2%, rgba(56,185,193,1) 35%, rgba(255,255,255,0.75) 100%);
+    opacity: 1;
+    transition: 0.4s all ease-out;
+    width: 100%;
+    border-radius: 15px;
+    height:100%;
+    transform: translateY(-2.7em);
+    position:absolute;
+}
+.sub-background:hover {
+    opacity: 0;
+    transition: 0.4s all ease-out;
+}
+
+.title-bar span{
+    position:relative;
+    font-size:1.8em;
+    opacity:1;
+    z-index:99;
+    color: black;
+    padding: 0px 120px 0px 20px;
+    display:block;
+    width:min-content;
+}
+
+.title-bar:hover span {
+    background: linear-gradient(121deg,rgba(193,88,56,1)75%,#ffffffff 75%,#00000000 85%);
+    border-radius: 15px 0px 0px 15px;
+    color:#fff;
+
+}

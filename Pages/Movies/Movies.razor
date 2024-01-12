@@ -1,0 +1,60 @@
+﻿@page "/Movies"
+
+<div class="container">
+    <PageTitleBar pageTitle="Movies" title="Movies" image="/images/movie.jpg"/>
+    <Inputgroup Icon="magnifying-glass" search="true">
+        <RFInpnput>
+            <InputText class="form-control form-control-lg" @bind-Value="title" placeholder="Write the movie name that you want to find..."/>
+        </RFInpnput>
+        <RFSearchBTN>
+            <a role="button" @onclick="Search"><Icons Icon="magnifying-glass"/>&nbsp; Search</a>
+        </RFSearchBTN>
+    </Inputgroup>
+    
+    @if (result.Keys.Count>0)
+    {
+        <Divider label="Results" />
+        <MovieResult movie="result"/>
+    }
+    <Divider label="Recent results"/>
+</div>
+
+@code {
+    private string title { get; set; } = string.Empty;
+    private Dictionary<string, object> result = new Dictionary<string, object>();
+    private async Task<Dictionary<string,object>> GetMovie()
+    {
+        Dictionary<string,object> data =await DeserializeResults(await FetchApi()!);
+        return data!;
+    }
+    private async Task<HttpResponseMessage> FetchApi()
+    {
+        HttpClient client = new HttpClient();
+        HttpRequestMessage requestMessage = new HttpRequestMessage()
+            {
+                Method = HttpMethod.Get,
+                RequestUri = new Uri($"https://www.omdbapi.com/?apikey=c8aeae1d&t={title}&plot=full"),
+            };
+        HttpResponseMessage responseMessage = await client.SendAsync(requestMessage);
+        return responseMessage;
+    }
+    private async Task<Dictionary<string,object>> DeserializeResults(HttpResponseMessage response)
+    {
+        if (response.IsSuccessStatusCode)
+        {
+            string jsonResponse = await response.Content.ReadAsStringAsync();
+            Dictionary<string, object> dic = JsonConvert.DeserializeObject<Dictionary<string, object>>(jsonResponse)!;
+            StateHasChanged();
+            return dic;
+        }
+        else
+        {
+            return null;
+        }
+    }
+    private async void Search()
+    {
+        result = await GetMovie();
+        StateHasChanged();
+    }
+}

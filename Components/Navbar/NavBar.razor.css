@@ -44,6 +44,11 @@
     color: #fff;
     transition: 0.4s all ease-out;
 }
+::deep .nav-item:active {
+    background: var(--primary-background-gradient-contrast);
+    color: #fff;
+    transition: 0.4s all ease-out;
+}
 
 .aside-title{
     font-family:"Teko";

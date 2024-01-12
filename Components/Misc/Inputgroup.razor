@@ -1,0 +1,17 @@
+﻿<div class="input-group">
+    <span class="input-group-text"><Icons Icon="@(Icon)"/></span>
+    @RFInpnput
+    @if (search)
+    {
+        <div class="input-group-text">
+            @RFSearchBTN
+        </div>
+    }
+</div>
+
+@code {
+    [Parameter] public RenderFragment? RFInpnput { get; set; }
+    [Parameter] public RenderFragment? RFSearchBTN { get; set; }
+    [Parameter] public string Icon { get; set; } = string.Empty;
+    [Parameter] public bool search { get; set; } = false;
+}
