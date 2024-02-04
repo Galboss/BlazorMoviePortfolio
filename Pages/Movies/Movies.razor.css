@@ -1,1 +1,6 @@
-﻿
+﻿.recent-results{
+    display:grid;
+    grid-template-columns: 0.33fr 0.33fr 0.33fr;
+    margin-bottom:50px;
+    gap:15px;
+}

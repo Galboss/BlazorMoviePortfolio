@@ -627,7 +627,6 @@ C:\Users\bryan\OneDrive\Escritorio\Blazor demo\BlazorMoviePortfolio\BlazorMovieP
 C:\Users\bryan\OneDrive\Escritorio\Blazor demo\BlazorMoviePortfolio\BlazorMoviePortfolio\obj\Debug\net7.0\scopedcss\Components\Footer\Footer.razor.rz.scp.css
 C:\Users\bryan\OneDrive\Escritorio\Blazor demo\BlazorMoviePortfolio\BlazorMoviePortfolio\obj\Debug\net7.0\scopedcss\Components\Navbar\NavBar.razor.rz.scp.css
 C:\Users\bryan\OneDrive\Escritorio\Blazor demo\BlazorMoviePortfolio\BlazorMoviePortfolio\obj\Debug\net7.0\scopedcss\MainLayout.razor.rz.scp.css
-C:\Users\bryan\OneDrive\Escritorio\Blazor demo\BlazorMoviePortfolio\BlazorMoviePortfolio\obj\Debug\net7.0\scopedcss\Pages\index.razor.rz.scp.css
 C:\Users\bryan\OneDrive\Escritorio\Blazor demo\BlazorMoviePortfolio\BlazorMoviePortfolio\obj\Debug\net7.0\scopedcss\bundle\Portfolio2.styles.css
 C:\Users\bryan\OneDrive\Escritorio\Blazor demo\BlazorMoviePortfolio\BlazorMoviePortfolio\obj\Debug\net7.0\scopedcss\projectbundle\Portfolio2.bundle.scp.css
 C:\Users\bryan\OneDrive\Escritorio\Blazor demo\BlazorMoviePortfolio\BlazorMoviePortfolio\obj\Debug\net7.0\compressed\jgzd6wjymz.gz
@@ -848,3 +847,7 @@ C:\Users\bryan\OneDrive\Escritorio\Blazor demo\BlazorMoviePortfolio\BlazorMovieP
 C:\Users\bryan\OneDrive\Escritorio\Blazor demo\BlazorMoviePortfolio\BlazorMoviePortfolio\obj\Debug\net7.0\scopedcss\Components\Misc\Divider.razor.rz.scp.css
 C:\Users\bryan\OneDrive\Escritorio\Blazor demo\BlazorMoviePortfolio\BlazorMoviePortfolio\obj\Debug\net7.0\scopedcss\Pages\Movies\Movies.razor.rz.scp.css
 C:\Users\bryan\OneDrive\Escritorio\Blazor demo\BlazorMoviePortfolio\BlazorMoviePortfolio\obj\Debug\net7.0\scopedcss\Pages\Movies\MovieResult.razor.rz.scp.css
+C:\Users\bryan\OneDrive\Escritorio\Blazor demo\BlazorMoviePortfolio\BlazorMoviePortfolio\obj\Debug\net7.0\scopedcss\Pages\Movies\MovieResultPlaceholder.razor.rz.scp.css
+C:\Users\bryan\OneDrive\Escritorio\Blazor demo\BlazorMoviePortfolio\BlazorMoviePortfolio\obj\Debug\net7.0\scopedcss\Pages\Movies\RecentResult.razor.rz.scp.css
+C:\Users\bryan\OneDrive\Escritorio\Blazor demo\BlazorMoviePortfolio\BlazorMoviePortfolio\obj\Debug\net7.0\scopedcss\Components\Misc\MovieCarousel.razor.rz.scp.css
+C:\Users\bryan\OneDrive\Escritorio\Blazor demo\BlazorMoviePortfolio\BlazorMoviePortfolio\obj\Debug\net7.0\scopedcss\Pages\About.razor.rz.scp.css

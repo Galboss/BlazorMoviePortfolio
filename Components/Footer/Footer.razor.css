@@ -1,4 +1,23 @@
 ﻿footer{
     background-color:black;
     min-height:100px;
+    z-index:1000;
+    color:white;
+    position:relative;
+    font-family:"Kanit";
+}
+::deep .brand-footer {
+    text-decoration: none;
+    font-size: 1.7em;
+    color: white;
+    transition: 0.4s all ease-out;
+    text-align:center;
+    display:inline-block;
+    width:100%;
+    margin:0 auto;
+}
+
+::deep .brand-footer:hover {
+    color: var(--primary-color-contrast);
+    transition: 0.4s all ease-out;
 }

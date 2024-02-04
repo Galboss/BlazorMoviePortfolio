@@ -1,0 +1,14 @@
+﻿.overlay{
+    opacity:0;
+    transition:0.4s all ease-out;
+    background-color:#fff;
+}
+.overlay:hover{
+    opacity:1;
+}
+
+.overlay p{
+    max-height:200px;
+    font-size:0.9em;
+    overflow:hidden;
+}

@@ -6,13 +6,14 @@
     transition:0.4s all ease-out;
 }
 
-.main-content{
+.main-content {
     min-height: calc(100dvh - 100px);
     transition: 0.4s all ease-out;
     padding-top: 50px;
+    width: 100dvw;
 }
-.content{
-    min-height:100dvh;
+.content {
+    min-height: 100dvh;
 }
 
 ::deep hr{

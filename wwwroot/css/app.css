@@ -1,8 +1,11 @@
 :root {
     --primary-color: #38b9c1;
-    --primary-color-contrast: #c15838;
+    --primary-color-contrast: #ff7449;
     --primary-background-gradient: linear-gradient(180deg, rgba(56,185,193,1) 55%, rgba(255,255,255,0) 100%);
     --primary-background-gradient-contrast: linear-gradient(180deg, rgba(193, 88, 56, 1) 55%, rgba(255,255,255,0) 100%);
+}
+body{
+    overflow-x: hidden!important;
 }
 
 @font-face {

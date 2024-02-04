@@ -1,27 +1,56 @@
 ﻿@page "/Movies"
-
+@inject ILocalStorageService LocalStorage
 <div class="container">
     <PageTitleBar pageTitle="Movies" title="Movies" image="/images/movie.jpg"/>
-    <Inputgroup Icon="magnifying-glass" search="true">
-        <RFInpnput>
-            <InputText class="form-control form-control-lg" @bind-Value="title" placeholder="Write the movie name that you want to find..."/>
-        </RFInpnput>
-        <RFSearchBTN>
-            <a role="button" @onclick="Search"><Icons Icon="magnifying-glass"/>&nbsp; Search</a>
-        </RFSearchBTN>
-    </Inputgroup>
+    <EditForm EditContext="context" OnValidSubmit="Search">
+        <Inputgroup Icon="magnifying-glass" search="true">
+            <RFInpnput>
+                <InputText class="form-control form-control-lg" @bind-Value="mcontext.search" placeholder="Write the movie name that you want to find..." />
+            </RFInpnput>
+            <RFSearchBTN>
+                <a role="button" @onclick="Search"><Icons Icon="magnifying-glass" />&nbsp; Search</a>
+            </RFSearchBTN>
+        </Inputgroup>
+    </EditForm>
     
-    @if (result.Keys.Count>0)
+    
+    @if (isLoading)
     {
         <Divider label="Results" />
-        <MovieResult movie="result"/>
+        <MovieResultPlaceholder />
     }
-    <Divider label="Recent results"/>
+    else
+    {
+        
+        @if (result.Keys.Count > 0 && !result.Keys.Contains("Error"))
+        {
+            <Divider label="Results" />
+            <MovieResult movie="result" />
+        }
+        else if (result.Keys.Contains("Error"))
+        {
+            <Divider label="Results" />
+            <h3>Not found</h3>
+        }
+    }
+    @if(recentResults.Count>0){
+        <Divider label="Recent results" />
+        <MovieCarousel @bind-movies=@recentResults/>
+        @* <div class="recent-results">
+            @foreach(var movie in recentResults)
+            {
+                <RecentResult Movie="@movie"/>
+            }
+        </div> *@
+    }
 </div>
 
 @code {
-    private string title { get; set; } = string.Empty;
+    private bool isLoading { get; set; } = false;
     private Dictionary<string, object> result = new Dictionary<string, object>();
+    private List<Dictionary<string, object>> recentResults = new List<Dictionary<string, object>>();
+    private EditContext? context { get; set; }
+    private ModelContext mcontext { get; set; } = new ModelContext();
     private async Task<Dictionary<string,object>> GetMovie()
     {
         Dictionary<string,object> data =await DeserializeResults(await FetchApi()!);
@@ -33,7 +62,7 @@
         HttpRequestMessage requestMessage = new HttpRequestMessage()
             {
                 Method = HttpMethod.Get,
-                RequestUri = new Uri($"https://www.omdbapi.com/?apikey=c8aeae1d&t={title}&plot=full"),
+                RequestUri = new Uri($"https://www.omdbapi.com/?apikey=c8aeae1d&t={mcontext.search}&plot=full"),
             };
         HttpResponseMessage responseMessage = await client.SendAsync(requestMessage);
         return responseMessage;
@@ -52,9 +81,54 @@
             return null;
         }
     }
+    private async Task GetStoredData()
+    {
+        List<Dictionary<string, object>> stored = await LocalStorage.GetItemAsync<List<Dictionary<string, object>>>("stored");
+        if (stored !=null && stored.Count > 0)
+        {
+            recentResults = stored;
+            StateHasChanged();
+        }
+    }
+    private async Task SetRecentResult()
+    {
+        if (result.Keys.Contains("Error"))
+            return;
+        if (result.Count == 0)
+            return;
+        if (recentResults.Count > 9)
+        {
+            recentResults.Remove(recentResults[9]);
+            recentResults.Insert(0,result);
+            await LocalStorage.SetItemAsync("stored", recentResults);
+        }
+        else
+        {
+            recentResults.Insert(0,result);
+            await LocalStorage.SetItemAsync("stored", recentResults);
+        }
+    }
     private async void Search()
     {
+        isLoading = true;
+        StateHasChanged();
+        await Task.Delay(100);
+        await SetRecentResult();
+        isLoading = false;
         result = await GetMovie();
         StateHasChanged();
+    }
+    protected override async Task OnParametersSetAsync()
+    {
+        await GetStoredData();
+    }
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        context = new EditContext(mcontext);
+    }
+    private class ModelContext
+    {
+        public string search { get; set; } = string.Empty;
     }
 }

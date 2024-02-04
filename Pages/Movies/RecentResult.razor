@@ -1,0 +1,19 @@
+﻿<div class="card">
+    <img src="@Movie["Poster"]" class="card-img" alt="@Movie["Title"]" />
+    <div class="card-img-overlay overlay">
+        <h3>@Movie["Title"]</h3>
+        <h6><strong>Year:&nbsp;</strong>@Movie["Year"]</h6>
+        <h6><strong>Director/s:&nbsp;</strong>@Movie["Director"]</h6>
+        <h6><strong>Writer/s:&nbsp;</strong>@Movie["Writer"]</h6>
+        <h6><strong>Awards:&nbsp;</strong>@Movie["Awards"]</h6>
+        <h6><strong>Metascore:&nbsp;</strong>@Movie["Metascore"]</h6>
+        <h6><strong>Country:&nbsp;</strong>@Movie["Country"]</h6>
+        <h6><strong>imdbID:&nbsp;</strong>@Movie["imdbID"]</h6>
+        <p style="font-style:italic;">Plot:&nbsp;@($"{@Movie["Plot"]}")</p>
+    </div>
+</div>
+
+
+@code {
+    [Parameter] public Dictionary<string, object> Movie { get; set; } = new Dictionary<string, object>();
+}

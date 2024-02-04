@@ -1,6 +1,60 @@
 ﻿@page "/About"
-<h3>About</h3>
 
-@code {
-
-}
+<div class="container about">
+    <PageTitleBar title="About" pageTitle="About" image="/images/about.jpg" />
+    <div class="row">
+        <div class="col-6">
+            <p>
+                Hello there! 👋 I'm <strong>Bryan José Chacón Reyes</strong>, a <strong>Software Engineer</strong> that enjoys
+                developing software. I love bringing ideas to life
+                through code and creating engaging user experiences. Here's a bit
+                more about me and my journey in the world of web development.
+            </p>
+            <h3>My Background</h3>
+            <p>
+                I graduated in 2023 with a degree in Software Enginering and have been exploring
+                the exciting realm of software development. Throughout my academic journey, I gained
+                a solid foundation in various technologies, and now I'm eager to apply my
+                skills in real-world projects.
+            </p>
+            <h5>Tech Stack used on this project</h5>
+            <p>
+                For this project, I utilized the <strong>Blazor framework</strong>, a powerful web
+                framework that allows building web applications with small components. It is similar
+                to React; however, the difference lies in the language used to build functions, 
+                which is C#. This framework employs C# to create the functionality of the application,
+                making it more robust and also compatible with the <strong>.NET Core</strong> environment.
+            </p>
+            <h2 style="font-family:'Teko'; letter-spacing:5px; color:var(--primary-color); font-weight:bold; font-size:72pt">
+                BMP
+            </h2>
+        </div>
+        <div class="col-6">
+            <h3>About the project</h3> 
+            <p>
+                Users can search for information about their favorite movies. The application fetches data
+                in real-time from the OMDb API and displays it in a user-friendly format. You can learn how
+                to use it here <a href="https://www.omdbapi.com/">Open Movie Api</a>.
+            </p>
+            <h5>Tech Stack used on this project</h5>
+            <p>
+                For this project, I utilized the <strong>Blazor framework</strong>, a powerful web
+                framework that allows building web applications with small components. It is similar
+                to React; however, the difference lies in the language used to build functions,
+                which is C#. This framework employs C# to create the functionality of the application,
+                making it more robust and also compatible with the <strong>.NET Core</strong> environment.
+            </p>
+            <h5>Clean and Minimalist UI</h5>
+            <p>
+                I believe in the power of simplicity. The user interface is designed to be clean and intuitive, 
+                ensuring that visitors can easily navigate and find the information they're looking for.
+            </p>
+            <h5>How it works?</h5>
+            <p>
+                The usage of this software is very simple, you just right the name of the movie on the search section,
+                then you press the search button and if the movie exist, it will show you the information related to
+                the movie, and also will store the previous results of the search on the page.
+            </p>
+        </div>
+    </div>
+</div>

@@ -40,8 +40,7 @@
 }
 
 .title-bar:hover span {
-    background: linear-gradient(121deg,rgba(193,88,56,1)75%,#ffffffff 75%,#00000000 85%);
+    background: linear-gradient(121deg,rgba(255, 142, 94, 1)75%,#ffffffff 75%,#00000000 85%);
     border-radius: 15px 0px 0px 15px;
-    color:#fff;
-
+    color: #fff;
 }

@@ -1,0 +1,53 @@
+﻿<div class="carousel slide mb-3" id="movie-carousel">
+    <div class="carousel-inner">
+
+            <div class="carousel-item active">
+                <div class="movie-container">
+                @for (int index = 0; index < 3; index++)
+                {
+                    int active = (activeSlide + index) % movies!.Count;
+
+                    <div  style="min-height:600px; min-width:350px; margin:0 auto;">
+                        <RecentResult Movie="@movies[active]" />
+                    </div>
+                }
+                </div>
+            </div>
+ 
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#movie-carousel" datab-bs-slide="prev" @onclick="PreviousClick">
+        <span class="fs-2"><Icons icon="chevron-left"/></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#movie-carousel" datab-bs-slide="next" @onclick="NextClick">
+        <span class="fs-2"><Icons icon="chevron-right"/></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+@code {
+    [Parameter] public List<Dictionary<string, object>>? movies { get; set; }
+    [Parameter] public EventCallback<List<Dictionary<string,object>>> moviesChanged { get; set; }
+    private int activeSlide { get; set; } = 0;
+
+    private void NextClick()
+    {
+        if (movies!.Count < 3)
+            return;
+        if (activeSlide == movies!.Count-1)
+            activeSlide = 0;
+        else
+            activeSlide++;
+        StateHasChanged();
+    }
+    private void PreviousClick()
+    {
+        if (movies!.Count < 3)
+            return;
+        if (activeSlide == 0)
+            activeSlide = movies!.Count-1;
+        else
+            activeSlide--;
+        StateHasChanged();
+    }
+}

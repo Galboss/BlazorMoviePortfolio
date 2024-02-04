@@ -1,0 +1,23 @@
+﻿.movie-container {
+    display: grid;
+    grid-template-columns: 0.33fr 0.33fr 0.33fr;
+}
+
+.carousel-control-next {
+    justify-content: flex-end !important;
+}
+.carousel-control-prev {
+    justify-content:flex-start!important;
+}
+@media only screen and (max-width: 1300px) {
+    .movie-container {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .carousel-control-prev {
+        justify-content: flex-end !important;
+    }
+    .carousel-control-next {
+        justify-content: flex-start !important;
+    }
+}

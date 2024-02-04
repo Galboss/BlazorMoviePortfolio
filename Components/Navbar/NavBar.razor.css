@@ -6,17 +6,20 @@
     box-shadow: 10px 0px 6px 0px rgba(0,0,0,0.15);
     overflow: hidden;
     transition: 0.4s all ease-out;
-    z-index:99;
+    z-index:100;
+    position:fixed;
 }
 
 .navaside-extended {
-    width:150px;
+    width: 150px;
     height: 100dvh;
     -webkit-box-shadow: 10px 0px 6px 0px rgba(0,0,0,0.15);
     -moz-box-shadow: 10px 0px 6px 0px rgba(0,0,0,0.15);
     box-shadow: 10px 0px 6px 0px rgba(0,0,0,0.15);
     overflow: hidden;
     transition: 0.4s all ease-out;
+    position: fixed;
+    z-index: 100;
 }
 
 .navSection{
@@ -26,9 +29,11 @@
 }
 
 ::deep .nav-item {
-    font-family:'Kanit';
+    font-family:'Teko';
     font-weight:600;
+    font-size:1.2em;
     display: inherit;
+    letter-spacing:2.5px;
     flex-direction: column;
     text-decoration: none;
     align-items: center;
@@ -50,10 +55,16 @@
     transition: 0.4s all ease-out;
 }
 
+::deep .nav-item.active {
+    background: var(--primary-background-gradient-contrast);
+    color: #fff;
+    transition: 0.4s all ease-out;
+}
+
 .aside-title{
     font-family:"Teko";
     font-weight:bolder;
-    letter-spacing:5px;
+    letter-spacing:3px;
     line-height:0.85;
     font-size:2em;
     display:flex;

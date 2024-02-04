@@ -1,18 +1,29 @@
 ﻿@inject ISessionStorageService SessionStorage
 @inject ILocalStorageService LocalStorage
+@inject NavigationManager Navigator
 <style>
     .page{
         background-color: @(theme?"#333333":"#fff");
         color: @(theme?"#fff":"#000");
     }
-    .main-content{
+    /* .main-content{
         width: calc(100dvw - @(menuExtended? "150px":"90px"));
+    } */
+    .navaside{
+        background-color: @(theme ? "#333333" : "#fff");
+    }
+    .navaside-extended {
+        background-color: @(theme ? "#333333" : "#fff");
     }
     .form-control{
         color: @(theme ? "#fff" : "#000") !important;
     }
     ::placeholder{
         color: @(theme? "#AAA":"#444") !important;
+    }
+
+    .carousel-control-next, .carousel-control-prev {
+        color: @(theme ? "#fff" : "#000") !important;
     }
 </style>
 
@@ -25,7 +36,7 @@
             <span class="capital">M</span><span class="@(menuExtended?"letters":"letters-hidden")">ovie</span>
         </div>
         <div class="word">
-            <span class="capital">P</span><span class="@(menuExtended?"letters":"letters-hidden")">orfolio</span>
+            <span class="capital">P</span><span class="@(menuExtended?"letters":"letters-hidden")">ortfolio</span>
         </div>
     </div>
     <div class="navSection">
@@ -55,22 +66,48 @@
                 }
             </a>
         }
-        <NavLink class="nav-item" href="/Movies">
-            <Icons Icon="film"/>
-            @if (menuExtended)
-            {
-                <span>&nbsp;Movies</span>
-            }
-        </NavLink>
-        <NavLink class="nav-item" href="/About">
-            <Icons Icon="info" />
-            @if (menuExtended)
-            {
-                <span>&nbsp;About</span>
-            }
-        </NavLink>
+        @if (Navigator.Uri.EndsWith("Movies"))
+        {
+            <NavLink class="nav-item active" href="/Movies">
+                <Icons Icon="film" />
+                @if (menuExtended)
+                {
+                    <span>&nbsp;Movies</span>
+                }
+            </NavLink>
+        }
+        else
+        {
+            <NavLink class="nav-item" href="/Movies">
+                <Icons Icon="film" />
+                @if (menuExtended)
+                {
+                    <span>&nbsp;Movies</span>
+                }
+            </NavLink>
+        }
+
+        @if (Navigator.Uri.EndsWith("About"))
+        {
+            <NavLink class="nav-item active" href="/About">
+                <Icons Icon="info" />
+                @if (menuExtended)
+                {
+                    <span>&nbsp;About</span>
+                }
+            </NavLink>
+        }
+        else
+        {
+            <NavLink class="nav-item" href="/About">
+                <Icons Icon="info" />
+                @if (menuExtended)
+                {
+                    <span>&nbsp;About</span>
+                }
+            </NavLink>
+        }
     </div>
-    
 </aside>
 
 @code{
